@@ -23,7 +23,7 @@ public final class CookieService {
                  }
              }
          }
-        return "";
+        return null;
     }
 
     public static final String saveCookieAndRetureCt(HttpServletRequest request, HttpServletResponse response) {

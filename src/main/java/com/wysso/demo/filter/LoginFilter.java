@@ -38,6 +38,9 @@ public class LoginFilter implements Filter {
         System.err.println("uri = "+request.getRequestURL());
 
         String ctid = CookieService.readFromCookie(request);
+        if (ctid == null) {
+            ctid = CookieService.saveCookieAndRetureCt(request, response);
+        }
     }
 
     @Override
