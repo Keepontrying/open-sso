@@ -16,9 +16,11 @@ public final class CookieService {
 
      public static final String readFromCookie(HttpServletRequest request) {
         Cookie[] cookies = request.getCookies();
-         for (Cookie cookie : cookies) {
-             if (COOKIE_KEY.equals(cookie.getName())) {
-                 return cookie.getValue();
+         if (cookies != null) {
+             for (Cookie cookie : cookies) {
+                 if (COOKIE_KEY.equals(cookie.getName())) {
+                     return cookie.getValue();
+                 }
              }
          }
         return "";
