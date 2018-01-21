@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="qrcodejs-master/jquery.min.js"></script>
+    <script type="text/javascript" src="qrcodejs-master/qrcode.js"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+        });
+
+        var qrcode = new QRCode('qrcodeCanvas', {
+            text: 'http://10.13.18.18:8080/b2c/index.html',
+            width: 256,
+            height: 256,
+            colorDark : '#e49a0e',
+            colorLight : '#ffffff',
+            correctLevel : QRCode.CorrectLevel.H,
+
+        });
+    </script>
+</head>
+<body>
+<center>
+    <h2>该二维码支持中文和LOGO</h2>
+    <div id="qrcodeCanvas"></div>
+</center>
+</body>
+</html>

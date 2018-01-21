@@ -22,7 +22,7 @@ import java.io.IOException;
 @WebFilter(filterName = "loginFilter",urlPatterns = "/*")
 public class LoginFilter implements Filter {
 
-    private static Logger logger = LoggerFactory.getLogger(LoginFilter.class);
+    private static Logger  logger = LoggerFactory.getLogger(LoginFilter.class);
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -41,6 +41,7 @@ public class LoginFilter implements Filter {
         if (ctid == null) {
             ctid = CookieService.saveCookieAndRetureCt(request, response);
         }
+        filterChain.doFilter(request, response);
     }
 
     @Override
